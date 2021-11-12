@@ -1,6 +1,6 @@
 <?php
 
-namespace chulakov\phptypograph;
+namespace Chulakov\PhpTypograph;
 
 interface TypografInterface
 {
