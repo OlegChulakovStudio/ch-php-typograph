@@ -1,6 +1,6 @@
 {
   "name": "chulakov/ch-php-typograph",
-  "description": "Component lets tune Muravjev typograph",
+  "description": "Component lets tune Muravjev typograph and use it",
   "version": "1.0.0",
   "type": "php-typograph-component",
   "license": "BSD-3-Clause",
@@ -17,7 +17,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "chulakov\\phptypograph\\": "src/"
+      "Chulakov\\PhpTypograph\\": "src/"
     }
   },
   "require-dev": {
@@ -25,13 +25,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "tests\\": "tests/"
+      "Tests\\": "tests/"
     }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ]
+  }
 }

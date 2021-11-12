@@ -1,6 +1,6 @@
 <?php
 
-namespace chulakov\phptypograph;
+namespace Chulakov\PhpTypograph;
 
 class TypographFacade implements TypografInterface
 {
@@ -18,7 +18,7 @@ class TypographFacade implements TypografInterface
     public function __construct(array $additionalRules = [], array $changedRules = [])
     {
         $configurator = new TypographConfigurator($additionalRules, $changedRules);
-        $configurator->configureTypograph();
+        $configurator->configure();
         $this->typograph = $configurator->getConfiguredTypograph();
     }
 
