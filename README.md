@@ -23,7 +23,7 @@
 
 ```php
 $configurator = new TypographConfigurator();
-$configurator->configureTypograph();
+$configurator->configure();
 ```
 
 2. Настройка типографа с правилами переданными через конструктор конфигуратора.
