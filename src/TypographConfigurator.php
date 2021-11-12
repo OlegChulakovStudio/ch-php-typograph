@@ -1,6 +1,6 @@
 <?php
 
-namespace chulakov\phptypograph;
+namespace Chulakov\PhpTypograph;
 
 class TypographConfigurator
 {
@@ -116,7 +116,7 @@ class TypographConfigurator
      * Добавление новых правил
      * Изменение существующих правил
      */
-    public function configureTypograph()
+    public function configure()
     {
         $this->typograph->initOptions($this->additionalOptions);
         $this->customizeOptions();

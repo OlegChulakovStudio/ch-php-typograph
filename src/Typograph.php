@@ -1,6 +1,6 @@
 <?php
 
-namespace chulakov\phptypograph;
+namespace Chulakov\PhpTypograph;
 
 use Emuravjev\Mdash\Typograph as MdashTypograph;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace tests;
+namespace Tests;
 
-use chulakov\phptypograph\TypographFacade;
+use Chulakov\PhpTypograph\TypographFacade;
 use PHPUnit_Framework_TestCase;
 
 /**
