@@ -1,7 +1,6 @@
 {
   "name": "chulakov/ch-php-typograph",
   "description": "Component lets tune Muravjev typograph and use it",
-  "version": "1.0.0",
   "type": "php-typograph-component",
   "license": "BSD-3-Clause",
   "require": {
