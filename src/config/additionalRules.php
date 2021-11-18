@@ -5,8 +5,8 @@ return [
         'selector' => 'Abbr',
         'ruleName' => 'nobr_vtch_BC',
         'params' => [
-            'pattern' => '/(^|\s|\&nbsp\;|)([дД]о)?[ ](н)\.?[ ]?э\./ue',
-            'replacement' => '$m[1] . $this->tag($m[2] . " н."." э.", "span", array("class" => "nowrap"))',
+            'pattern' => '/(^|\s|\&nbsp\;)(\<.+?\>)?([дД]о)?[ ](н)\.?[ ]?э\.(\<.+?\>)?/ue',
+            'replacement' => '$m[1] . $this->tag($m[3] . " н."." э.", "span", array("class" => "nowrap"))',
         ],
     ],
     // Добавление пробела перед символом процента
