@@ -42,6 +42,10 @@ class TypographConfiguratorTest extends TestCase
             'text' => 'Кейс 100 % качества',
             'result' => 'Кейс 100&nbsp;% качества',
         ],
+        [
+            'text' => 'Васечкин А О',
+            'result' => 'Васечкин&nbsp;А&nbsp;О',
+        ],
     ];
 
     protected $additionalRules = [
