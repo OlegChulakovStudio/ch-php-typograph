@@ -32,7 +32,7 @@ class TestCase extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Запускает тесты.
+     * Запускает тесты
      * Проверяет на совпадение тестовых данных с ожидаемым результатом
      *
      * @return void
