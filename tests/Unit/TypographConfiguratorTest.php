@@ -29,7 +29,7 @@ class TypographConfiguratorTest extends TestCase
         ],
         [
             'text' => 'Васечкин А. А. и Kim Jh. работают над проектом старт-ап',
-            'result' => 'Васечкин&nbsp;А&nbsp;А. и&nbsp;Kim&nbsp;Jh. работают над проектом старт-ап',
+            'result' => 'Васечкин&nbsp;А.&nbsp;А. и&nbsp;Kim&nbsp;Jh. работают над проектом старт-ап',
         ],
     ];
 
