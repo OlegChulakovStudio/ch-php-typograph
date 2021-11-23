@@ -41,8 +41,24 @@ class TestCase extends PHPUnit_Framework_TestCase
     {
         $tests = empty($tests) ? $this->tests : $tests;
         foreach ($tests as $test) {
-            $processedText = $this->typograph->process($test['text']);
+            $processedText = $this->process($test['text']);
             $this->assertEquals($test['result'], $processedText);
         }
+    }
+
+    /**
+     * Функция типографирования. Можно указать, сколько раз типографировать один и тот же текст
+     *
+     * @param $text
+     * @param int $times
+     * @return string
+     */
+    public function process($text, $times = 1)
+    {
+        $processedText = $text;
+        for ($i = $times; $i != 0; $i--) {
+            $processedText = $this->typograph->process($processedText);
+        }
+        return $processedText;
     }
 }
