@@ -43,7 +43,7 @@ class RuleTretTest extends TestCase
         //ФИО
         [
             'text' => 'Васечкин А. А. и Kim Jh. работают над проектом старт-ап',
-            'result' => 'Васечкин&nbsp;А&nbsp;А. и&nbsp;Kim&nbsp;Jh. работают над проектом старт-ап',
+            'result' => 'Васечкин&nbsp;А.&nbsp;А. и&nbsp;Kim&nbsp;Jh. работают над проектом старт-ап',
         ],
         //Двойные союзы
         [
@@ -79,6 +79,11 @@ class RuleTretTest extends TestCase
         [
             'text' => 'А О Васечкин',
             'result' => 'А&nbsp;О&nbsp;Васечкин',
+        ],
+        //Сокращение до н. э.
+        [
+            'text' => 'до н. э.',
+            'result' => '<nobr>до н. э.</nobr>',
         ],
     ];
 
