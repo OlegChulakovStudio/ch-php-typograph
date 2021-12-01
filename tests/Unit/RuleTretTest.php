@@ -85,6 +85,11 @@ class RuleTretTest extends TestCase
             'text' => 'до н. э.',
             'result' => '<nobr>до н. э.</nobr>',
         ],
+        //Случай с точкой. После нее не должен добавляться пробел
+        [
+            'text' => 'Next.js и ргшршг',
+            'result' => 'Next.js и&nbsp;ргшршг',
+        ],
     ];
 
     /**
