@@ -57,6 +57,7 @@ class TypographConfigurator
         'Space.clear_before_after_punct' => false,
         'Space.clear_percent' => false,
         'Space.nobr_twosym_abbr' => false,
+        'Space.autospace_after_dot' => false,
 
         'Symbol.euro_symbol' => true,
         'Symbol.copy_replace' => true,
@@ -69,7 +70,8 @@ class TypographConfigurator
     public $additionalOptions = [
         'Punctmark.punctuation_marks_limit' => 'direct',
         'Symbol.euro_symbol' => 'direct',
-        'Space.nobr_twosym_abbr' => 'direct'
+        'Space.nobr_twosym_abbr' => 'direct',
+        'Space.autospace_after_dot' => 'direct',
     ];
 
     /**
