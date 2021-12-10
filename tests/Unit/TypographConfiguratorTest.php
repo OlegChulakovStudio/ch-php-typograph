@@ -8,7 +8,9 @@ use Tests\TestCase;
 class TypographConfiguratorTest extends TestCase
 {
     /**
-     * @var array
+     * Успешные тесты
+     *
+     * @var \string[][]
      */
     protected $testsSuccessful = [
         [
@@ -33,6 +35,11 @@ class TypographConfiguratorTest extends TestCase
         ],
     ];
 
+    /**
+     * Провальные тесты
+     *
+     * @var \string[][]
+     */
     protected $testsFailed = [
         [
             'text' => 'Мама, папа, брат <i>и</i> я',
@@ -42,12 +49,13 @@ class TypographConfiguratorTest extends TestCase
             'text' => 'Кейс 100 % качества',
             'result' => 'Кейс 100&nbsp;% качества',
         ],
-        [
-            'text' => 'Васечкин А О',
-            'result' => 'Васечкин&nbsp;А&nbsp;О',
-        ],
     ];
 
+    /**
+     * Добавочные правила типографа
+     *
+     * @var array
+     */
     protected $additionalRules = [
         [
             'selector' => 'Abbr',
@@ -60,7 +68,7 @@ class TypographConfiguratorTest extends TestCase
     ];
 
     /**
-     * @return void
+     * @inheritDoc
      */
     protected function setUp()
     {
@@ -71,20 +79,10 @@ class TypographConfiguratorTest extends TestCase
     /**
      * Тестирует конфигуратор типографа
      *
-     *
      * @return void
      */
     public function testTypographConfiguratorUnits()
     {
-        $this->runTypographTests($this->testsSuccessful);
-    }
-
-    protected function runTypographTests($tests = [])
-    {
-        parent::runTypographTests($tests);
-        foreach ($this->testsFailed as $test) {
-            $processedText = $this->typograph->process($test['text']);
-            $this->assertNotEquals($test['result'], $processedText);
-        }
+        $this->runAllTests($this->testsSuccessful, $this->testsFailed);
     }
 }

@@ -61,8 +61,6 @@ class TypographConfigurator
 
         'Symbol.euro_symbol' => true,
         'Symbol.copy_replace' => true,
-
-        'Quote.quotation' => false,
     ];
 
     /**
@@ -74,7 +72,6 @@ class TypographConfigurator
         'Symbol.euro_symbol' => 'direct',
         'Space.nobr_twosym_abbr' => 'direct',
         'Space.autospace_after_dot' => 'direct',
-        'Quote.quotation' => 'direct',
     ];
 
     /**
