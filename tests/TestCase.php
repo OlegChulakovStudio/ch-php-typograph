@@ -11,11 +11,18 @@ use PHPUnit_Framework_TestCase;
 class TestCase extends PHPUnit_Framework_TestCase
 {
     /**
-     * Массив тестов вида ['text' => 'Text to test', 'result' => 'Expected result']
+     * Массив успешных тестов вида ['text' => 'Text to test', 'result' => 'Expected result']
      *
      * @var array
      */
-    protected $tests = [];
+    protected $testsSuccessful = [];
+
+    /**
+     * Массив проавльных тестов вида ['text' => 'Text to test', 'result' => 'Expected result']
+     *
+     * @var array
+     */
+    protected $testsFailed = [];
 
     /**
      * @var TypographFacade
@@ -23,6 +30,8 @@ class TestCase extends PHPUnit_Framework_TestCase
     protected $typograph;
 
     /**
+     * @inheritDoc
+     *
      * @return void
      */
     protected function setUp()
@@ -37,13 +46,46 @@ class TestCase extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    protected function runTypographTests($tests = [])
+    protected function runSuccessfulTypographTests($testsSuccessful = [])
     {
-        $tests = empty($tests) ? $this->tests : $tests;
+        $this->runTypographTests($testsSuccessful, 'assertEquals');
+    }
+
+    /**
+     * Запускает тесты
+     * Проверяет на существования отличий между тестовыми данными и ожидаемым результатом
+     *
+     * @return void
+     */
+    protected function runFailedTypographTests($testsFailed = [])
+    {
+        $this->runTypographTests($testsFailed, 'assertNotEquals');
+    }
+
+    /**
+     * Запуск тестов с передаваемым параметром сравнения тестовых данных и ожидаемым результатом
+     *
+     * @param array $tests
+     * @param string $action
+     */
+    protected function runTypographTests($tests, $action)
+    {
         foreach ($tests as $test) {
-            $processedText = $this->process($test['text']);
-            $this->assertEquals($test['result'], $processedText);
+            $processedText = $this->typograph->process($test['text']);
+            $this->{$action}($test['result'], $processedText);
         }
+    }
+
+    /**
+     * Запуск всех тестов
+     *
+     * @param array $testsSuccessful
+     * @param array $testsFailed
+     */
+    protected function runAllTests($testsSuccessful = [], $testsFailed = [])
+    {
+        $this->runSuccessfulTypographTests($testsSuccessful);
+        $this->runFailedTypographTests($testsFailed);
     }
 
     /**
